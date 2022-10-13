@@ -6,18 +6,16 @@ import HelloWorld from "./components/HelloWorld.vue";
 <template>
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/ChatMatchLogo.png" width="125" height="125" /> -->
-    <video
-      class="logo"
-      src="@/assets/ChatMatchVideo.mp4" 
-      autoplay muted
-    ></video>
 
     <div class="wrapper">
-      <HelloWorld msg="Bienvenue sur ChatMatch" />
-
       <nav>
+        <RouterLink to="/"><video
+          class="logo"
+          src="@/assets/ChatMatchVideo.mp4"
+          autoplay
+          muted></video></RouterLink>
         <RouterLink to="/createAccount">Créer un compte</RouterLink>
-        <RouterLink to="/filActualite">Continuer sans compte</RouterLink>
+        <RouterLink to="/login">Se connecter</RouterLink>
       </nav>
     </div>
   </header>
@@ -43,11 +41,12 @@ header {
 }
 
 nav {
+  display: flex;
   align-items: center;
   width: 100%;
   font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1px;
 }
 
 nav a.router-link-exact-active {

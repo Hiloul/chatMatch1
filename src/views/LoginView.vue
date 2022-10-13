@@ -1,6 +1,6 @@
 <template>
-  <div class="filActualite">
-    <h1>Fil d'actualité</h1>
+  <div class="loginPage">
+    <h1>Se connecter</h1>
   </div>
 </template>
 
