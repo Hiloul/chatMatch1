@@ -5,19 +5,19 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <template>
   <header>
-    <img
-      alt="Vue logo"
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/ChatMatchLogo.png" width="125" height="125" /> -->
+    <video
       class="logo"
-      src="@/assets/ChatMatch.png"
-      width="125"
-      height="125"
-    />
+      src="@/assets/ChatMatchVideo.mp4" 
+      autoplay muted
+    ></video>
+
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="Bienvenue sur ChatMatch" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/createAccount">Créer un compte</RouterLink>
+        <RouterLink to="/filActualite">Continuer sans compte</RouterLink>
       </nav>
     </div>
   </header>
@@ -26,17 +26,24 @@ import HelloWorld from "./components/HelloWorld.vue";
 </template>
 
 <style scoped>
+body {
+  background-color: #ffeedd;
+  display: flex;
+}
 header {
   line-height: 1.5;
   max-height: 100vh;
 }
 
 .logo {
-  display: block;
+  display: flex;
   margin: 0 auto 2rem;
+  width: 300px;
+  height: 300px;
 }
 
 nav {
+  align-items: center;
   width: 100%;
   font-size: 12px;
   text-align: center;
@@ -64,12 +71,16 @@ nav a:first-of-type {
 @media (min-width: 1024px) {
   header {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    /* padding-right: calc(var(--section-gap) / 2); */
   }
 
   .logo {
     margin: 0 2rem 0 0;
+    align-items: center;
   }
 
   header .wrapper {
@@ -77,7 +88,6 @@ nav a:first-of-type {
     place-items: flex-start;
     flex-wrap: wrap;
   }
-
   nav {
     text-align: left;
     margin-left: -1rem;
