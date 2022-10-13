@@ -2,31 +2,35 @@
 defineProps({
   msg: {
     type: String,
-    required: true,
-  },
-});
+    required: true
+  }
+})
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="orange">{{ msg }}</h1>
     <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
+      Le premier réseau social pour chats
     </h3>
   </div>
 </template>
 
 <style scoped>
+
 h1 {
+  display: flex;
   font-weight: 500;
   font-size: 2.6rem;
   top: -10px;
+  justify-content: center;
+  align-items: center;
 }
 
 h3 {
   font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .greetings h1,
@@ -37,7 +41,7 @@ h3 {
 @media (min-width: 1024px) {
   .greetings h1,
   .greetings h3 {
-    text-align: left;
+    text-align: center;
   }
 }
 </style>
