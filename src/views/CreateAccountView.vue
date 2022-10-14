@@ -146,7 +146,7 @@ form {
 }
 
 .error {
-  margin-top: 20px;
+  
   padding: 10px;
   background-color: #b42f26;
   color: white;
