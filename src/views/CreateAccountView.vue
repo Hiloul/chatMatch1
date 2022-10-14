@@ -6,7 +6,7 @@ export default {
       pseudo: "",
       email: "",
       password: "",
-      result: null,
+      result: true,
       token: "",
     };
   },
@@ -36,59 +36,53 @@ export default {
       this.result = data.success;
       if (data.success === true) {
         this.token = data.token;
+        localStorage.setItem("token", data.token);
+        // voici comment lire une valeur stockée dans le disque dur
+        this.token = localStorage.getItem("token");
+        // voici comment vider le stockage du disque dur
+        localStorage.clear();
       }
+
+
+
     },
   },
+
+
+
 };
 </script>
+
 
 <template>
   <form @submit.prevent="register">
     <h1>Créer un compte</h1>
     <div class="input-container">
-      <label for="nomInput"></label>
+      <label for="nom"></label>
       <input placeholder="Nom/Prénom" id="nomInput" v-model="nom" required />
     </div>
     <div class="input-container">
-      <label for="pseudoInput"></label>
-      <input
-        type="text"
-        id="pseudoInput"
-        placeholder="Pseudo"
-        v-model="pseudo"
-        required
-      />
+      <label for="pseudo"></label>
+      <input type="text" id="pseudoInput" placeholder="Pseudo" v-model="pseudo" required />
     </div>
     <div class="input-container">
-      <label for="emailInput"></label>
-      <input
-        type="email"
-        id="emailInput"
-        placeholder="Email"
-        v-model="email"
-        required
-      />
+      <label for="email"></label>
+      <input type="email" id="emailInput" placeholder="Email" v-model="email" required />
     </div>
     <div class="input-container">
-      <label for="passwordInput"></label>
-      <input
-        type="password"
-        id="passwordInput"
-        placeholder="Password"
-        v-model="password"
-        required
-      />
+      <label for="password"></label>
+      <input type="password" id="passwordInput" placeholder="Password" v-model="password" required />
     </div>
     <input class="createaccount-btn" type="submit" value="S'inscrire" />
   </form>
 
   <div class="input-container">
-    <p v-if="result === true" class="success">
+    <p v-if="result === false" class="success">
       Creation réussie
       <br />
       Token: {{ token }}
     </p>
-    <p v-else-if="result === false" class="error">Creation échouée</p>
+   
   </div>
 </template>
 
@@ -142,13 +136,6 @@ form {
   margin-top: 20px;
   padding: 10px;
   background-color: #2c962c;
-  color: white;
-}
-
-.error {
-  
-  padding: 10px;
-  background-color: #b42f26;
   color: white;
 }
 
