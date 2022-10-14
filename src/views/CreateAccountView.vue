@@ -1,3 +1,4 @@
 <template>
     <h1>Créer un compte</h1>
+    <form action=""></form>
 </template>
