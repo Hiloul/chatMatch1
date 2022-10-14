@@ -2,10 +2,10 @@
 export default {
   data() {
     return {
-      name: "coucouc",
-      pseudo: "mioumiou",
-      email: "test@test.com",
-      password: "test",
+      name: "",
+      pseudo: "",
+      email: "",
+      password: "",
       result: null,
       token: "",
     };
@@ -64,7 +64,7 @@ export default {
       <input
         type="email"
         id="emailInput"
-        placeholder="Mail"
+        placeholder="Email"
         v-model="email"
         required
       />
@@ -108,10 +108,6 @@ form {
   display: flex;
   flex-direction: row;
 }
-
-/* .input-container label {
-  padding: 5px;
-} */
 
 .input-container input {
   border: 1px solid grey;
