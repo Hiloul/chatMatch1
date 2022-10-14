@@ -79,8 +79,8 @@ export default {
   <div class="input-container">
     <p v-if="result === false" class="success">
       Creation réussie
-      <br />
-      Token: {{ token }}
+      <!-- <br />
+      {{ token }} -->
     </p>
    
   </div>
@@ -134,8 +134,11 @@ form {
 
 .success {
   margin-top: 20px;
-  padding: 10px;
-  background-color: #2c962c;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: rgb(5, 150, 10);
   color: white;
 }
 
