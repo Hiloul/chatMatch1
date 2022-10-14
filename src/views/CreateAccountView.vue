@@ -43,14 +43,13 @@ export default {
 </script>
 
 <template>
-  <h1>Créer un compte</h1>
-
   <form @submit.prevent="register">
+    <h1>Créer un compte</h1>
     <div class="input-container">
-        
       <label for="nomInput"></label>
       <input placeholder="Nom/Prénom" id="nomInput" v-model="nom" required />
-
+    </div>
+    <div class="input-container">
       <label for="pseudoInput"></label>
       <input
         type="text"
@@ -59,7 +58,8 @@ export default {
         v-model="pseudo"
         required
       />
-
+    </div>
+    <div class="input-container">
       <label for="emailInput"></label>
       <input
         type="email"
@@ -68,7 +68,8 @@ export default {
         v-model="email"
         required
       />
-
+    </div>
+    <div class="input-container">
       <label for="passwordInput"></label>
       <input
         type="password"
@@ -77,10 +78,10 @@ export default {
         v-model="password"
         required
       />
-      <input class="createaccount-btn" type="submit" value="S'inscrire"/>
     </div>
+    <input class="createaccount-btn" type="submit" value="S'inscrire" />
   </form>
-   
+
   <div class="input-container">
     <p v-if="result === true" class="success">
       Creation réussie
@@ -92,7 +93,10 @@ export default {
 </template>
 
 <style scoped>
-div {
+form {
+  display: flex;
+  flex-direction: column;
+
   background-color: white;
   height: 340px;
   padding: 5px;
@@ -100,19 +104,61 @@ div {
   border-radius: 50px;
 }
 
+.input-container {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-container label {
+  padding: 5px;
+}
+
+.input-container input {
+  border: 1px solid grey;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+.createaccount-btn {
+  margin: 20px;
+  padding: 10px;
+  background-color: #fe8c0e;
+  color: white;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.createaccount-btn:hover {
+  cursor: pointer;
+  background-color: #ffeedd;
+  box-shadow: 1px 1px 5px 1px lightgray;
+  color: #fe8c0e;
+  transition: all 0.3s;
+}
+
+.success {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2c962c;
+  color: white;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #b42f26;
+  color: white;
+}
+
 h1 {
   text-align: center;
   text-decoration: underline;
   padding: 5px;
   color: #fe8c0e;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-
-  text-align: center;
 }
 
 input {
@@ -128,27 +174,5 @@ input {
   box-shadow: 1px 1px 5px 1px lightgray;
   outline: none;
   max-width: 50%;
-}
-
-button {
-  margin-left: 45%;
-  padding: 10px;
-  text-align: justify;
-  border-radius: 10px;
-  margin-top: 1rem;
-  padding: 6px;
-  border-radius: 8px;
-  border: none;
-  font-weight: 600;
-  outline: none;
-  background-color: #fe8c0e;
-  color: white;
-}
-
-button:hover {
-  background-color: #ffeedd;
-  box-shadow: 1px 1px 5px 1px lightgray;
-  color: #fe8c0e;
-  transition: all 0.3s;
 }
 </style>
