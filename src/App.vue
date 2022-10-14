@@ -61,7 +61,7 @@ nav a {
   display: inline-block;
   padding: 0 1rem;
   border-left: 1px solid var(--color-border);
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 nav a:first-of-type {
@@ -79,8 +79,10 @@ nav a:first-of-type {
   }
 
   .logo {
-    margin: 0 2rem 0 0;
-    align-items: center;
+   display: flex;
+   width: 250px;
+   height: 250px;
+   
   }
 
   header .wrapper {
@@ -93,8 +95,7 @@ nav a:first-of-type {
     margin-left: -1rem;
     font-size: 1rem;
 
-    padding: 1rem 0;
-    margin-top: 1rem;
+   
   }
 }
 </style>
