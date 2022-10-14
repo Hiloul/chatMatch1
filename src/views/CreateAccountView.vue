@@ -154,7 +154,6 @@ form {
 
 h1 {
   text-align: center;
-  text-decoration: underline;
   padding: 5px;
   color: #fe8c0e;
 }
