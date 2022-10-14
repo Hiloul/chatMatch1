@@ -96,7 +96,6 @@ export default {
 form {
   display: flex;
   flex-direction: column;
-
   background-color: white;
   height: 340px;
   padding: 5px;
@@ -110,9 +109,9 @@ form {
   flex-direction: row;
 }
 
-.input-container label {
+/* .input-container label {
   padding: 5px;
-}
+} */
 
 .input-container input {
   border: 1px solid grey;
@@ -123,7 +122,10 @@ form {
 }
 
 .createaccount-btn {
-  margin: 20px;
+  margin-right: 25%;
+  align-self: center;
+  width: 100px;
+  text-align: center;
   padding: 10px;
   background-color: #fe8c0e;
   color: white;
