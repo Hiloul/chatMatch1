@@ -2,6 +2,8 @@
 export default {
   data() {
     return {
+      name: "coucouc",
+      pseudo: "mioumiou",
       email: "test@test.com",
       password: "test",
       result: null,
@@ -10,7 +12,7 @@ export default {
   },
 
   methods: {
-    async login() {
+    async register() {
       const options = {
         method: "POST",
         headers: {
@@ -18,9 +20,9 @@ export default {
         },
         body: JSON.stringify({
           name: String,
+          pseudo: String,
           email: String,
           password: String,
-          pseudo: String,
         }),
       };
 
@@ -41,16 +43,51 @@ export default {
 </script>
 
 <template>
-  <div>
-    <h1>Créer un compte</h1>
+  <h1>Créer un compte</h1>
 
-    <form action="">
-      <input placeholder="Nom/Prénom" id="nom" />
-      <input type="text" placeholder="Pseudo" />
-      <input type="email" placeholder="Mail" />
-      <input type="password" placeholder="Password" />
-    </form>
-    <button>S'inscrire</button>
+  <form @submit.prevent="register">
+    <div class="input-container">
+        
+      <label for="nomInput"></label>
+      <input placeholder="Nom/Prénom" id="nomInput" v-model="nom" required />
+
+      <label for="pseudoInput"></label>
+      <input
+        type="text"
+        id="pseudoInput"
+        placeholder="Pseudo"
+        v-model="pseudo"
+        required
+      />
+
+      <label for="emailInput"></label>
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Mail"
+        v-model="email"
+        required
+      />
+
+      <label for="passwordInput"></label>
+      <input
+        type="password"
+        id="passwordInput"
+        placeholder="Password"
+        v-model="password"
+        required
+      />
+      <input class="createaccount-btn" type="submit" value="S'inscrire"/>
+    </div>
+  </form>
+   
+  <div class="input-container">
+    <p v-if="result === true" class="success">
+      Creation réussie
+      <br />
+      Token: {{ token }}
+    </p>
+    <p v-else-if="result === false" class="error">Creation échouée</p>
   </div>
 </template>
 
