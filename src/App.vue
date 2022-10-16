@@ -1,6 +1,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+import ProfilPage from "./components/ProfilPage.vue";
 </script>
 
 <template>
@@ -19,7 +20,8 @@ import HelloWorld from "./components/HelloWorld.vue";
       </nav>
     </div>
   </header>
-
+  
+  <RouterLink to="/profil">modifier</RouterLink>
   <RouterView />
 </template>
 
