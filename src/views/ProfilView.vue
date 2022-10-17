@@ -1,4 +1,3 @@
-<!-- 
 <script>
 export default {
   data() {
@@ -49,37 +48,31 @@ export default {
     },
    
   },
-
-  computed: {
-    
-  }
-
 };
 </script> -->
 <template>
   <div class="card">
-  <h1>Mon Profil</h1>
- 
-<p class="photoProfil">
-  <img src="" alt="">
-</p>
+    <h1>Mon Profil</h1>
 
-<p>@</p>
-<p>Status:</p>
-<textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
+    <p class="photoProfil">
+      <img src="" alt="">
+    </p>
 
-</div>
+    <p>@</p>
+    <p>Status:</p>
+    <textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
+
+  </div>
 </template>
-  
-  
-  <style>
-  
-    h1 {
+
+<style>
+h1 {
   text-align: center;
   padding: 5px;
-    color: #fe8c0e;
-  }
-  .card{
+  color: #fe8c0e;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,7 +83,7 @@ export default {
   border-radius: 20px;
 }
 
-.photoProfil{
+.photoProfil {
   background-color: white;
   height: 100px;
   width: 100px;
@@ -98,19 +91,20 @@ export default {
   box-shadow: 0.5px 0.5px 2.5px 0.5px lightgray;
   border-radius: 100px;
 }
-img{
+
+img {
   border-image-width: initial;
-height: 100px;
-width: 100px;
-border-radius: 100px;
+  height: 100px;
+  width: 100px;
+  border-radius: 100px;
 }
 
-textarea{
+textarea {
   cursor: pointer;
   width: 300px;
-    height: 100px;
-    margin: 0;
-    resize: none;
+  height: 100px;
+  margin: 0;
+  resize: none;
   background-color: white;
   border: 1px solid grey;
   outline: none;
@@ -119,20 +113,21 @@ textarea{
   border-radius: 5px;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-   scroll-behavior: smooth;
-  
+  scroll-behavior: smooth;
+
 }
-p{
-  font-size:larger;
+
+p {
+  font-size: larger;
   font-weight: 400;
 }
 
-  @media (min-width: 1024px) {
-    .about {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
+@media (min-width: 1024px) {
+  .about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
   }
-  </style>
+}
+</style>
   

@@ -6,11 +6,15 @@ export default {
       pseudo: "",
       email: "",
       password: "",
-      result: true,
-      token: "",
+      result: false,
     };
   },
-
+  computed: {
+    validPassword: function () {
+      if (this.password.length < 4) return false;
+      return true;
+    },
+  },
   methods: {
     async register() {
       const options = {
@@ -19,85 +23,73 @@ export default {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: String,
-          pseudo: String,
-          email: String,
-          password: String,
+          firstname: this.pseudo,
+          lastname: this.name,
+          email: this.email,
+          password: this.password,
         }),
       };
 
       const response = await fetch(
-        "https://social-network-api.osc-fr1.scalingo.io/demo/register",
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/register",
         options
       );
-
       const data = await response.json();
-
       this.result = data.success;
-      if (data.success === true) {
-        this.token = data.token;
-        localStorage.setItem("token", data.token);
-        // voici comment lire une valeur stockée dans le disque dur
-        this.token = localStorage.getItem("token");
-        // voici comment vider le stockage du disque dur
-        localStorage.clear();
-      }
-
-
-
     },
-   
   },
-
-  computed: {
-    
-  }
-
 };
 </script>
-
 
 <template>
   <form @submit.prevent="register">
     <h1>Créer un compte</h1>
     <div class="input-container">
       <label for="nom"></label>
-      <input placeholder="Nom/Prénom" id="nomInput" v-model="nom" required />
+      <input placeholder="Nom" id="nomInput" v-model="name" required />
     </div>
     <div class="input-container">
       <label for="pseudo"></label>
-      <input type="text" id="pseudoInput" placeholder="Pseudo" v-model="pseudo" required />
+      <input
+        type="text"
+        id="pseudoInput"
+        placeholder="Pseudo"
+        v-model="pseudo"
+        required
+      />
     </div>
     <div class="input-container">
       <label for="email"></label>
-      <input type="email" id="emailInput" placeholder="Email" v-model="email" required />
+      <input
+        type="email"
+        id="emailInput"
+        placeholder="Email"
+        v-model="email"
+        required
+      />
     </div>
     <div class="input-container">
       <label for="password"></label>
-      <input type="password" :class="password" id="passwordInput" placeholder="Password" v-model="password"
-        required />
+      <input
+        type="password"
+        :class="password"
+        id="passwordInput"
+        placeholder="Password"
+        v-model="password"
+        required
+      />
     </div>
     <input class="createaccount-btn" type="submit" value="S'inscrire" />
   </form>
-  
 
-  <div class="input-container">
-    <RouterLink to="/profil">
-    <p v-if="result === false" class="success">
-      Creation réussie
-      <!-- <br />
-      {{ token }} -->
-      
-
-    </p>
-  </RouterLink>
-
+  <div v-if="result" class="input-container">
+    <RouterLink to="/login">
+      <p class="success">Creation réussie</p>
+    </RouterLink>
   </div>
 </template>
 
 <style scoped>
-
-
 form {
   display: flex;
   flex-direction: column;
