@@ -27,17 +27,14 @@ export default Card;
 
       <div class="analytics">
         <div class="data">
-          <i class="bx bx-heart"></i>
+          <i class="fa-thin fa-heart"></i>
           <span class="number">60k</span>
         </div>
         <div class="data">
-          <i class="bx bx-message-rounded"></i>
+          <i class="fa-regular fa-comments"></i>
           <span class="number">20k</span>
         </div>
-        <div class="data">
-          <i class="bx bx-share"></i>
-          <span class="number">12k</span>
-        </div>
+        
       </div>
     </div>
 
@@ -79,7 +76,7 @@ body {
   height: 36%;
   width: 100%;
   border-radius: 24px 24px 0 0;
-  background-color: #FFEEDD;
+  background-color: #fae3cb;
 }
 .image {
   position: relative;
@@ -148,6 +145,7 @@ body {
 }
 .buttons .button:hover {
   background-color: #FFEEDD;
+  color: #FE8C0E;
 }
 .profile-card .analytics {
   display: flex;

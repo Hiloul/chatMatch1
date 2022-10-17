@@ -1,7 +1,7 @@
 
 <!-- App.vue nihel -->
 <script setup>
-import TheWelcome from "../components/TheWelcome.vue";
+
 import BCarousel from "../components/BCarousel.vue";
 
 
@@ -10,8 +10,8 @@ import BCarousel from "../components/BCarousel.vue";
 
 <template>
   <main>
-    <TheWelcome />
-    <BCarousel/>
+
+    <BCarousel />
   </main>
 
 </template>
