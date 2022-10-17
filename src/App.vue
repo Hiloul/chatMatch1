@@ -16,7 +16,6 @@ import HelloWorld from "./components/HelloWorld.vue";
           muted></video></RouterLink>
         <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
         <RouterLink class="hover-a" to="/login">Se connecter</RouterLink>
-        <RouterLink to="/profil">Modifier Profil</RouterLink>
       </nav>
     </div>
   </header>
