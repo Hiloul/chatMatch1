@@ -24,18 +24,26 @@
           required
         />
       </div>
+<<<<<<< HEAD
       <div v-if="result" class="input-container">
         <RouterLink to="/profil">
           <p v-if="result === true" class="success">Connexion réussie</p>
         </RouterLink>
       </div>
+=======
+      <RouterLink to="/profil">
+      <p v-if="result === true" class="success">Connexion réussie</p>
+      
+>>>>>>> hilel3
       <p v-else-if="result === false" class="error">
         Adresse mail ou mot de passe est invalide.
       </p>
+    </RouterLink>
       <input class="login-button" type="submit" value="Se connecter" />
       
     </form>
   </div>
+  
 </template>
 
 <script>

@@ -46,7 +46,12 @@ header {
 nav {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   /* width: 100%; */
+=======
+  justify-content: center;
+  width: 100%;
+>>>>>>> hilel3
   font-size: 12px;
   text-align: center;
   margin-top: 1px;
