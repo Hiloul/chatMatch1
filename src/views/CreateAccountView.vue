@@ -1,45 +1,58 @@
 <script>
-import ProfilPage from '../components/ProfilPage.vue';
 export default {
-    data() {
-        return {
-            name: "",
-            pseudo: "",
-            email: "",
-            password: "",
-            result: true,
-            token: "",
-        };
-    },
-    methods: {
-        async register() {
-            const options = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    name: String,
-                    pseudo: String,
-                    email: String,
-                    password: String,
-                }),
-            };
-            const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/demo/register", options);
-            const data = await response.json();
-            this.result = data.success;
-            if (data.success === true) {
-                this.token = data.token;
-                localStorage.setItem("token", data.token);
-                // voici comment lire une valeur stockée dans le disque dur
-                this.token = localStorage.getItem("token");
-                // voici comment vider le stockage du disque dur
-                localStorage.clear();
-            }
+  data() {
+    return {
+      name: "",
+      pseudo: "",
+      email: "",
+      password: "",
+      result: true,
+      token: "",
+    };
+  },
+
+  methods: {
+    async register() {
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          name: String,
+          pseudo: String,
+          email: String,
+          password: String,
+        }),
+      };
+
+      const response = await fetch(
+        "https://social-network-api.osc-fr1.scalingo.io/demo/register",
+        options
+      );
+
+      const data = await response.json();
+
+      this.result = data.success;
+      if (data.success === true) {
+        this.token = data.token;
+        localStorage.setItem("token", data.token);
+        // voici comment lire une valeur stockée dans le disque dur
+        this.token = localStorage.getItem("token");
+        // voici comment vider le stockage du disque dur
+        localStorage.clear();
+      }
+
+
+
     },
-    computed: {},
-    components: { ProfilPage }
+   
+  },
+
+  computed: {
+    
+  }
+
 };
 </script>
 
@@ -69,13 +82,14 @@ export default {
   
 
   <div class="input-container">
-    <RouterLink to="/ProfilView.vue">
+    <RouterLink to="/profil">
     <p v-if="result === false" class="success">
       Creation réussie
       <!-- <br />
       {{ token }} -->
+      
+
     </p>
-    
   </RouterLink>
 
   </div>
@@ -91,7 +105,7 @@ form {
   height: 340px;
   padding: 5px;
   box-shadow: 2px 2px 10px 2px lightgray;
-  border-radius: 50px;
+  border-radius: 20px;
 }
 
 .input-container {
@@ -129,9 +143,9 @@ form {
   transition: all 0.3s;
 }
 
-.success {
+p.success {
   margin-top: 20px;
-  width: 100%;
+  width: 600px;
   text-align: center;
   font-weight: 500;
   border-radius: 5px;
