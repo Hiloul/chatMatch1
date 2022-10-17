@@ -39,8 +39,8 @@ export default {
         localStorage.setItem("token", data.token);
         // voici comment lire une valeur stockée dans le disque dur
         this.token = localStorage.getItem("token");
-        // voici comment vider le stockage du disque dur
-        localStorage.clear();
+        
+        
       }
 
 
