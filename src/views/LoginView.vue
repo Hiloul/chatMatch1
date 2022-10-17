@@ -26,7 +26,7 @@
       </div>
       <div v-if="result" class="input-container">
         <RouterLink to="/profil">
-          <p v-if="result === true" class="success">Connexion réussie</p>
+          <p v-if="result === true"></p>
         </RouterLink>
       </div>
       <p v-else-if="result === false" class="error">

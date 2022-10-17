@@ -85,9 +85,7 @@ export default {
   </form>
 
   <div v-if="result" class="input-container">
-    <RouterLink to="/login">
-      <p class="success">Creation réussie</p>
-    </RouterLink>
+    <RouterLink to="/login"></RouterLink>
   </div>
 </template>
 
