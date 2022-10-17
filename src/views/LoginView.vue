@@ -24,11 +24,16 @@
           required
         />
       </div>
-      <p v-if="result === true" class="success">Connexion réussie</p>
+      <div v-if="result" class="input-container">
+        <RouterLink to="/profil">
+          <p v-if="result === true" class="success">Connexion réussie</p>
+        </RouterLink>
+      </div>
       <p v-else-if="result === false" class="error">
         Adresse mail ou mot de passe est invalide.
       </p>
       <input class="login-button" type="submit" value="Se connecter" />
+      
     </form>
   </div>
 </template>
@@ -41,31 +46,7 @@ export default {
       password: "",
       result: null,
       token: "",
-      userLogInfo : [],
     };
-  },
-
-  computed: {
-    // passwordIsValid: function (){
-    //     const isLengthOk = this.password.length >= 7;
-    //     if (!isLengthOk) return false;
-
-    //     for(let char of this.card){
-    //        if (isNAN (char)){
-    //         return false;
-    //        }
-    //     }
-    //  },
-    // emailIsValid: function (){
-    //     const isLengthOk = this.email.length >= 10;
-    //     if (!isLengthOk) return false;
-
-    //     for(let char of this.card){
-    //        if (isNAN (char)){
-    //         return false;
-    //        }
-    //     }
-    //  },
   },
 
   methods: {
@@ -79,11 +60,10 @@ export default {
           email: this.email,
           password: this.password,
         }),
-        
       };
 
       const response = await fetch(
-        "https://social-network-api.osc-fr1.scalingo.io/chat-match",
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/login",
         options
       );
 
@@ -96,10 +76,11 @@ export default {
         // voici comment "persister" une valeur dans le disque dur
         localStorage.setItem("token", data.token);
         // voici comment lire une valeur stockée dans le disque dur
-        const token = localStorage.getItem("token");
+        // const token = localStorage.getItem("token");
         // voici comment vider le stockage du disque dur
-        localStorage.clear();
-        console.log(localStorage);
+        // localStorage.clear();
+        // console.log(localStorage);
+        this.$router.push('/profil')
       }
     },
   },
@@ -138,6 +119,7 @@ export default {
   margin: 10px;
   display: flex;
   flex-direction: row;
+  
 }
 
 .input-container input {
@@ -148,6 +130,7 @@ export default {
   flex-grow: 1;
   width: 400px;
   height: 30px;
+  outline:none ;
 }
 
 .login-button {
@@ -164,6 +147,7 @@ export default {
   cursor: pointer;
   background-color: #f9ddbe;
   color: #fe8c0e;
+  transition: all 0.2s;
 }
 
 .success {

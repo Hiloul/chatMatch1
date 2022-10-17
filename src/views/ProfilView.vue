@@ -27,7 +27,7 @@ export default {
       };
 
       const response = await fetch(
-        "https://social-network-api.osc-fr1.scalingo.io/demo/register",
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/profil",
         options
       );
 

@@ -16,7 +16,7 @@ import HelloWorld from "./components/HelloWorld.vue";
           muted></video></RouterLink>
         <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
         <RouterLink class="hover-a" to="/login">Se connecter</RouterLink>
-        <RouterLink to="/profil">Modifier Profil</RouterLink>
+        <!-- <RouterLink to="/profil">Modifier le profil</RouterLink> -->
       </nav>
     </div>
   </header>
@@ -26,10 +26,12 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <style scoped>
 body {
+  margin: 0;
   background-color: #ffeedd;
   display: flex;
 }
 header {
+  margin-top: 0;
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -44,7 +46,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   font-size: 12px;
   text-align: center;
   margin-top: 1px;
@@ -87,14 +89,13 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+    margin-top: 0;
   }
   nav {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
+    margin-top: 0;
   }
 }
 </style>
