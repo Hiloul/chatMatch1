@@ -24,13 +24,17 @@
           required
         />
       </div>
+      <RouterLink to="/profil">
       <p v-if="result === true" class="success">Connexion réussie</p>
+      
       <p v-else-if="result === false" class="error">
         Adresse mail ou mot de passe est invalide.
       </p>
+    </RouterLink>
       <input class="login-button" type="submit" value="Se connecter" />
     </form>
   </div>
+  
 </template>
 
 <script>
@@ -83,7 +87,7 @@ export default {
       };
 
       const response = await fetch(
-        "https://social-network-api.osc-fr1.scalingo.io/chat-match",
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/login",
         options
       );
 
