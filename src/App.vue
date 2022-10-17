@@ -1,7 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
-import ProfilPage from "./components/ProfilPage.vue";
 </script>
 
 <template>
@@ -17,11 +16,11 @@ import ProfilPage from "./components/ProfilPage.vue";
           muted></video></RouterLink>
         <RouterLink to="/createAccount">Créer un compte</RouterLink>
         <RouterLink to="/login">Se connecter</RouterLink>
+        <!-- <RouterLink to="/profil">Modifier Profil</RouterLink> -->
       </nav>
     </div>
   </header>
   
-  <RouterLink to="/profil">modifier</RouterLink>
   <RouterView />
 </template>
 
