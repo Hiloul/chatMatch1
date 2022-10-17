@@ -148,6 +148,7 @@ body {
 }
 .buttons .button:hover {
   background-color: #FFEEDD;
+  color: ;
 }
 .profile-card .analytics {
   display: flex;
