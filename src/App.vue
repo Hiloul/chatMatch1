@@ -43,6 +43,7 @@ header {
 nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   font-size: 12px;
   text-align: center;
