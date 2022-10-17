@@ -20,10 +20,8 @@ a,
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: #f9ddbe;
-  }
+.hover-a:hover{
+  background-color: #f9ddbe;
 }
 
 @media (min-width: 1024px) {
