@@ -1,6 +1,8 @@
 <script>
 export default {
+  
   data() {
+
     return {
       name: "",
       pseudo: "",
@@ -9,6 +11,7 @@ export default {
       result: true,
       token: "",
     };
+    
   },
   mounted: function () {
     this.getProfil();
@@ -30,8 +33,10 @@ export default {
 
       const responseBody = await response.json();
       console.log("responseBody", responseBody);
+      
     },
   },
+  
 };
 </script>
 <template>
@@ -44,7 +49,7 @@ export default {
         alt="">
     </p>
 
-    <p>@{{ email }}</p>
+    <p>@{{email}}</p>
 
     <textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
 
