@@ -5,16 +5,16 @@ import Card from "./Card.vue"
 
 <template>
     <div id="cage">
-    <button @click="previous">PREV</button>
-    <template v-for="(profile, i) in profiles" :key="i">
-        <section v-if="i === currentIndex" :class="`hero is-medium is-`">
-            <div class="hero-body has-text-centered">
-                <Card :pseudo="profile.firstname" :description="profile.description" :img="profile.image" />
-            </div>
-        </section>
-       
-    </template>
-     <button @click="previous">NEXT</button>
+        <button @click="previous">PREV</button>
+        <template v-for="(profile, i) in profiles" :key="i">
+            <section v-if="i === currentIndex" :class="`hero is-medium is-`">
+                <div class="hero-body has-text-centered">
+                    <Card :pseudo="profile.firstname" :description="profile.description" :img="profile.image" />
+                </div>
+            </section>
+
+        </template>
+        <button @click="previous">NEXT</button>
     </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
                 }, {
                     _id: 2, firstname: "Taj", image: "/photoChat/pexels-pixabay-208984.jpg", description: "En couple"
                 }, {
-                    _id: 3, firstname: "Meno", image: "/photoChat/pexels-nihat-68594.jpg" , description:"Célib"
+                    _id: 3, firstname: "Meno", image: "/photoChat/pexels-nihat-68594.jpg", description: "Célib"
                 }
             ],
             currentIndex: 0,
@@ -55,27 +55,27 @@ export default {
 </script>
 
 <style scoped>
-#cage{
+#cage {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-button{
+
+button {
     border-radius: 50px;
     height: 50px;
     width: 50px;
     border: none;
     margin: 20px;
-   background-color: #fe8c0e;
-   color: white;
+    background-color: #fe8c0e;
+    color: white;
 }
+
 button:hover {
-  cursor: pointer;
-  background-color: #ffeedd;
-  box-shadow: 1px 1px 5px 1px lightgray;
-  color: #fe8c0e;
-  transition: all 0.3s;
+    cursor: pointer;
+    background-color: #ffeedd;
+    box-shadow: 1px 1px 5px 1px lightgray;
+    color: #fe8c0e;
+    transition: all 0.3s;
 }
-
-
 </style>
