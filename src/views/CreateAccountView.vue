@@ -137,16 +137,7 @@ form {
   transition: all 0.2s;
 }
 
-p.success {
-  margin-top: 20px;
-  width: 600px;
-  text-align: center;
-  font-weight: 500;
-  border-radius: 5px;
-  background-color: rgb(5, 150, 10);
-  box-shadow: 1px 1px 5px 1px lightgray;
-  color: white;
-}
+
 
 h1 {
   text-align: center;
