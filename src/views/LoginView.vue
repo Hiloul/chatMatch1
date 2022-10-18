@@ -149,12 +149,7 @@ export default {
   transition: all 0.2s;
 }
 
-.success {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #2c962c;
-  color: white;
-}
+
 
 .error {
   margin-top: 20px;

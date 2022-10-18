@@ -1,48 +1,4 @@
-<script  >
- 
- const Profil = {
-  props: ["pseudo", "img" ],
 
-}
-export default Profil;
-
-  </script>
-
-<template>
-  
-<div class="swiper mySwiper container">
-      <div class="swiper-wrapper content">
-<div class="swiper-slide card">
-          <div class="card-content">
-            <div class="image">
-              {{img}}
-            </div>
-            <div class="name-profession">
-              <span class="name">{{pseudo}}</span>
-             
-            </div>
-
-           
-
-            <div class="button">
-              <button class="aboutMe">Félin me</button>
-              <button class="hireMe">Chat me</button>
-            </div>
-          </div>
-        </div>
-      </div>
- </div>
-
- <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-
-  
-  </template>
-
-  
-
-<style scoped>
 
 
 
