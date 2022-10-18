@@ -12,41 +12,33 @@ export default {
       showCreatePost: false,
     };
   },
-
+  mounted: function () {
+    this.getProfil();
+  },
   methods: {
-    togglePost() {
-      this.showCreatePost = !this.showCreatePost;
-    },
-    async register() {
+togglePost(){
+  this.showCreatePost = !this.showCreatePost;
+},
+    async getProfil() {
+
       const options = {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: String,
-          pseudo: String,
-          email: String,
-          password: String,
-        }),
+          Authorization: "bearer " + localStorage.getItem("token")
+        }
       };
       const response = await fetch(
-        "https://social-network-api.osc-fr1.scalingo.io/chat-match/profil",
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/user",
         options
       );
-      const data = await response.json();
-      this.result = data.success;
-      if (data.success === true) {
-        this.token = data.token;
-        // localStorage.setItem("token", data.token);
-        // // voici comment lire une valeur stockée dans le disque dur
-        // this.token = localStorage.getItem("token");
-        // // voici comment vider le stockage du disque dur
-        // localStorage.clear();
-      }
+
+      const responseBody = await response.json();
+      console.log("responseBody", responseBody);
+
     },
   },
-  components: { CreatePost },
+components:{CreatePost},
 };
 </script>
 
