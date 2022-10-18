@@ -20,14 +20,14 @@ export default {
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/ChatMatchLogo.png" width="125" height="125" /> -->
 
-    <div class="wrapper">
+    <div v-if="isConnected" class="wrapper">
       <nav>
         <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
         <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
         <RouterLink class="hover-a" to="/login">Se connecter</RouterLink>
-
       </nav>
     </div>
+
   </header>
 
   <RouterView />
