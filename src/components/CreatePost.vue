@@ -2,15 +2,15 @@
 export default {
   data() {
     return {
-        pseudo:"",
-        message:"",
+      pseudo: "",
+      message: "",
     };
   },
 
   methods: {
-    togglePost (){
-        this.showCreatePost = !this.showCreatePost
-      },
+    togglePost() {
+      this.showCreatePost = !this.showCreatePost
+    },
     async post() {
       const options = {
         method: "POST",
@@ -24,10 +24,10 @@ export default {
         },
       };
 
-      const response = await fetch ("https://social-network-api.osc-fr1.scalingo.io/chat-match/post",
+      const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/chat-match/post",
         options)
 
-        const data = await response.json()
+      const data = await response.json()
     },
   },
 };
@@ -35,32 +35,33 @@ export default {
 
 <template>
   <div id="card-post">
-  <form>
-    <h2>Racontes-nous quelque-chose ! </h2>
-    <textarea name="" id="" cols="" rows=""></textarea>
-    <input @submit="togglePost"  type="submit" name="" id="inputCreatePost" value="Poster">
-  </form>
+    <form>
+      <h2>Racontes-nous quelque-chose ! </h2>
+      <textarea name="" id="" cols="" rows=""></textarea>
+      <input @submit="togglePost" type="submit" name="" id="inputCreatePost" value="Poster">
+    </form>
   </div>
 </template>
 
 <style scoped>
-#card-post{
-padding-top: 20px;
-margin-top: 20px;
-background-color: white;
-display: flex;
-flex-direction: column;
-border-radius: 20px;
-box-shadow: 1px 1px 5px 1px lightgray;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#card-post {
+  padding-top: 20px;
+  margin-top: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px 1px lightgray;
 }
 
-textarea{
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+textarea {
   margin-top: 20px;
   cursor: pointer;
   width: 300px;
@@ -78,7 +79,7 @@ textarea{
   scroll-behavior: smooth;
 }
 
-#inputCreatePost{
+#inputCreatePost {
   display: flex;
   text-align: center;
   align-items: center;
@@ -90,7 +91,8 @@ textarea{
   border-radius: 5px;
   font-size: 15px;
 }
-#inputCreatePost:hover{
+
+#inputCreatePost:hover {
   cursor: pointer;
   background-color: #f9ddbe;
   color: #fe8c0e;

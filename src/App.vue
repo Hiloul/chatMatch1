@@ -57,11 +57,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-  width: 100%;
-=======
   /* width: 100%; */
->>>>>>> master
   font-size: 12px;
   text-align: center;
   margin-top: 1px;
