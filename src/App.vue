@@ -3,6 +3,8 @@ import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
+
+
 <template>
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/ChatMatchLogo.png" width="125" height="125" /> -->
@@ -16,6 +18,7 @@ import HelloWorld from "./components/HelloWorld.vue";
           muted></video></RouterLink>
         <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
         <RouterLink class="hover-a" to="/login">Se connecter</RouterLink>
+     
       </nav>
     </div>
   </header>
