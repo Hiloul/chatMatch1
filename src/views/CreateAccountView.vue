@@ -36,6 +36,8 @@ export default {
       );
       const data = await response.json();
       this.result = data.success;
+
+      this.$router.push('/login')
     },
   },
 };
@@ -83,9 +85,7 @@ export default {
   </form>
 
   <div v-if="result" class="input-container">
-    <RouterLink to="/login">
-      <p class="success">Creation réussie</p>
-    </RouterLink>
+    <RouterLink to="/login"></RouterLink>
   </div>
 </template>
 
@@ -96,7 +96,7 @@ form {
   background-color: white;
   height: 340px;
   padding: 5px;
-  box-shadow: 2px 2px 10px 2px lightgray;
+  box-shadow: 1px 1px 5px 1px lightgray;
   border-radius: 20px;
 }
 
@@ -107,8 +107,8 @@ form {
 }
 
 .input-container input {
-  border: 1px solid grey;
-  padding: 5px;
+  border: 1px solid rgb(217, 216, 216);
+  padding-top: 5px;
   font-size: 12px;
   border-radius: 5px;
   flex-grow: 1;
@@ -132,7 +132,7 @@ form {
   background-color: #ffeedd;
   box-shadow: 1px 1px 5px 1px lightgray;
   color: #fe8c0e;
-  transition: all 0.3s;
+  transition: all 0.2s;
 }
 
 p.success {
