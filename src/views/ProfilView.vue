@@ -10,7 +10,7 @@ export default {
       result: true,
       token: "",
       showCreatePost: false,
-      userInfo:{"email"}
+     
     };
   },
   mounted: function () {
