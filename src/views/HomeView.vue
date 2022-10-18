@@ -1,7 +1,6 @@
 
 <!-- App.vue nihel -->
 <script setup>
-
 import BCarousel from "../components/BCarousel.vue";
 
 
