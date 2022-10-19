@@ -1,35 +1,53 @@
 <script>
+import Post from "../components/Post.vue";
 export default {
+  props: ["profile"],
   data() {
     return {
-      pseudo: "",
       message: "",
+      showPost: false,
+      postsList: []
     };
   },
-
+  mounted: function () {
+    this.getPosts();
+  },
   methods: {
-    togglePost() {
-      this.showCreatePost = !this.showCreatePost
+    async getPosts() {
+      const response = await fetch(
+        "https://social-network-api.osc-fr1.scalingo.io/chat-match/posts",
+      );
+      
+      const data = await response.json();
+      console.log(data);
+      if (data.success) {
+        this.postsList = data.posts;
+      }
     },
-    async post() {
+    async createPost() {
+      const token = localStorage.getItem("token");
       const options = {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer token",
+          Authorization: "bearer " + token,
         },
-        body: {
-          title: String,
-          content: String,
-        },
+        body: JSON.stringify({
+          title: this.message,
+          content: this.message,
+        }),
       };
 
-      const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/chat-match/post",
-        options)
+      const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/chat-match/post", options)
 
-      const data = await response.json()
-        },
+      const data = await response.json();
+      if (data.success) {
+        this.message = "";
+        await this.getPosts();
+      }
+    },
   },
+  components:{Post},
 };
 </script>
 
@@ -37,10 +55,13 @@ export default {
   <div id="card-post">
     <form>
       <h2>Racontes-nous quelque-chose ! </h2>
-      <textarea name="" id="" cols="" rows=""></textarea>
-      <input @submit="togglePost" type="submit" name="" id="inputCreatePost" value="Poster">
+      <textarea name="" id="" cols="" rows="" v-model="message" required></textarea>
+      <button @click.prevent="createPost" id="inputCreatePost" >Poster</button>
     </form>
   </div>
+  <template v-for="post in postsList" :key="post.id">
+    <Post v-if="post.userId == profile._id" :post="post" @reload-postlist="getPosts"/>
+  </template>
 </template>
 
 <style scoped>

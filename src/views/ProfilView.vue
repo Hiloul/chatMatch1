@@ -14,6 +14,7 @@ export default {
 
       result: true,
       token: "",
+      profile: {},
 
       showCreatePost: false,
       showModifierProfil: false,
@@ -35,8 +36,8 @@ export default {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer " + localStorage.getItem("token")
-        }
+          Authorization: "bearer " + localStorage.getItem("token"),
+        },
       };
       const response = await fetch(
         "https://social-network-api.osc-fr1.scalingo.io/chat-match/user",
@@ -44,12 +45,14 @@ export default {
       );
 
       const responseBody = await response.json();
+      this.profile = responseBody;
       console.log("responseBody", responseBody);
       this.userList = responseBody;
-
     },
   },
-  components: { CreatePost, ProfilPage },
+  
+   
+   components: { CreatePost, ProfilPage },
 };
 </script>
 
@@ -67,7 +70,7 @@ export default {
     <button @click="togglePost" id="inputCreatePost">Créer un post</button>
   </div>
 
-  <CreatePost v-if="showCreatePost" />
+  <CreatePost :profile="profile" v-if="showCreatePost" />
 </template>
 
 <style scoped>
@@ -105,7 +108,6 @@ export default {
   color: #fe8c0e;
   transition: all 0.2s;
 }
-
 
 h1 {
   text-align: center;

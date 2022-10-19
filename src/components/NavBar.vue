@@ -5,12 +5,12 @@ import { RouterLink, RouterView } from "vue-router";
 
 <script>
 export default {
-  methods : {
-     logout (){
+  methods: {
+    logout() {
       localStorage.clear();
-       
-     },
-     
+
+    },
+
   },
 
   data() {
@@ -26,30 +26,28 @@ export default {
 </script>
 
    
-   <template>
-   <div  class="wrapper">
-        <nav v-if="isConnected">
-          <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
-         
-         
-          <RouterLink  class="hover-a" to="/createAccount">Profil</RouterLink>
-        <RouterLink  class="hover-a" to="/login" @click="logout" >Se déconnecter</RouterLink>
-          
-        </nav>
-        <nav v-else>
-            <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
-             <RouterLink  class="hover-a" to="/login" >Se connecter</RouterLink>   
-          <RouterLink  class="hover-a" to="/createAccount">Créer un compte</RouterLink>
-        
-        </nav>
-      </div>
-      
-      </template>
-
-<style scoped>s
+<template>
+  <div class="wrapper">
+    <nav v-if="isConnected">
+      <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
 
 
-header {
+      <RouterLink class="hover-a" to="/profil">Profil</RouterLink>
+      <RouterLink class="hover-a" to="/login" @click="logout">Se déconnecter</RouterLink>
+
+    </nav>
+    <nav v-else>
+      <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
+      <RouterLink class="hover-a" to="/login">Se connecter</RouterLink>
+      <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
+
+    </nav>
+  </div>
+
+</template>
+
+<style scoped>
+s header {
   margin-top: 0;
   line-height: 1.5;
   max-height: 100vh;
@@ -119,6 +117,7 @@ nav a:first-of-type {
     margin-top: 0;
   }
 }
+
 button {
   margin-right: 25%;
   align-self: center;
