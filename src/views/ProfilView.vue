@@ -61,7 +61,7 @@ export default {
       <img src="src\assets\Chat_Match_1avatard.png" alt="">
     </p>
     <button @click="modifierProfil" id="inputModifierProfil"><i class="fa-solid fa-sun"></i></button>
-    <ProfilPage :profile="userList" v-if="showModifierProfil" />
+    <ProfilPage :profile="userList" v-if="showModifierProfil"/>
     <p>@{{ userList.firstname }}</p>
     <p>{{ userList.lastname }}</p>
 
