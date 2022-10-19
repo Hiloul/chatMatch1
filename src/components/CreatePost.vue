@@ -40,17 +40,12 @@ export default {
 
       const response = await fetch("https://social-network-api.osc-fr1.scalingo.io/chat-match/post", options)
 
-<<<<<<< HEAD
-      const data = await response.json()
-        },
-=======
       const data = await response.json();
       if (data.success) {
         this.message = "";
         await this.getPosts();
       }
     },
->>>>>>> branche-Marlee-6
   },
   components:{Post},
 };
