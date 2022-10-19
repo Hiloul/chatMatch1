@@ -5,12 +5,16 @@ import ProfilPage from "../components/ProfilPage.vue";
 export default {
   data() {
     return {
-      name: "",
-      pseudo: "",
-      email: "",
-      password: "",
+      userList: {
+        // name: "",
+        // pseudo: "",
+        // email: "",
+        // password: "",
+      },
+
       result: true,
       token: "",
+
       showCreatePost: false,
       showModifierProfil: false,
     };
@@ -27,7 +31,6 @@ export default {
       this.showCreatePost = !this.showCreatePost;
     },
     async getProfil() {
-
       const options = {
         method: "GET",
         headers: {
@@ -42,6 +45,7 @@ export default {
 
       const responseBody = await response.json();
       console.log("responseBody", responseBody);
+      this.userList = responseBody;
 
     },
   },
@@ -52,14 +56,11 @@ export default {
 <template>
   <div class="card">
     <p class="photoProfil">
-      <img
-        src="src\assets\Chat_Match_1avatard.png"
-        alt="">
+      <img src="src\assets\Chat_Match_1avatard.png" alt="">
     </p>
     <button @click="modifierProfil" id="inputModifierProfil"><i class="fa-solid fa-sun"></i></button>
-    <ProfilPage v-if="showModifierProfil" />
-    <p>@{{this.card-post}}</p>
-
+    <ProfilPage :profile="userList" v-if="showModifierProfil" />
+    <p>@{{ userList.email }}</p>
 
     <textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
     <button @click="togglePost" id="inputCreatePost">Créer un post</button>
@@ -70,13 +71,13 @@ export default {
 
 <style scoped>
 #inputModifierProfil {
- 
+
   padding: 2px;
   background-color: #fe8c0e;
   color: white;
   border: 0px;
   border-radius: 5px;
-  
+
 }
 
 #inputModifierProfil:hover {
