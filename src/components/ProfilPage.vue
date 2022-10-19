@@ -2,12 +2,14 @@
 export default {
   data() {
     return {
+      lastname:"Coucou",
       email: "",
       password: "",
     };
   },
   mounted: function () {
     this.modifierProfil();
+    
   },
   methods: {
     modifierProfil() {
@@ -15,13 +17,17 @@ export default {
     },
     async post() {
       const options = {
-        method: "GET",
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
           Authorization: "bearer token",
         },
         body: {
-
+          firstname: String,
+lastname: String,
+email: String,
+age: Number,
+occupation: String
         },
       };
 

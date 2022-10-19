@@ -58,7 +58,7 @@ export default {
     </p>
     <button @click="modifierProfil" id="inputModifierProfil"><i class="fa-solid fa-sun"></i></button>
     <ProfilPage v-if="showModifierProfil" />
-    <p>@{{email}}</p>
+    <p>@{{this.card-post}}</p>
 
 
     <textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
