@@ -5,7 +5,7 @@ import Card from "./Card.vue"
 
 <template>
     <div id="cage">
-        <button @click="previous">PREV</button>
+        <button @click="previous">Prev</button>
         <template v-for="(profile, i) in profiles" :key="i">
             <section v-if="i === currentIndex" :class="`hero is-medium is-`">
                 <div class="hero-body has-text-centered">
