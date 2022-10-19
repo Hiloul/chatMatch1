@@ -28,7 +28,7 @@ export default {
         options)
 
       const data = await response.json()
-    },
+        },
   },
 };
 </script>

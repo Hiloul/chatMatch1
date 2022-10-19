@@ -44,7 +44,9 @@ export default {
 <template>
   <div id="card-post">
     <form>
-      <input v-model="profileUpdated.email" type="email" />
+      <input v-model="profileUpdated.firstname" type="firstname" />
+      <input v-model="profileUpdated.lastname" type="lastname" />
+      
       <input
         @submit="modifierProfil"
         type="submit"
@@ -57,6 +59,11 @@ export default {
 </template>
 
 <style scoped>
+form{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #inputModifier {
   padding: 2px;
   background-color: #fe8c0e;
@@ -70,5 +77,19 @@ export default {
   background-color: #f9ddbe;
   color: #fe8c0e;
   transition: all 0.2s;
+}
+input{
+  border: none;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    outline: none;
+    background-color:#f9ddbe;
+    margin: 2px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px lightgray;
+    color:#fe8c0e;
+    font-weight: 500;
 }
 </style>

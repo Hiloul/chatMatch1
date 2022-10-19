@@ -60,7 +60,8 @@ export default {
     </p>
     <button @click="modifierProfil" id="inputModifierProfil"><i class="fa-solid fa-sun"></i></button>
     <ProfilPage :profile="userList" v-if="showModifierProfil" />
-    <p>@{{ userList.email }}</p>
+    <p>@{{ userList.firstname }}</p>
+    <p>{{ userList.lastname }}</p>
 
     <textarea cols="" rows="" placeholder="Ecrivez votre bio ici..."></textarea>
     <button @click="togglePost" id="inputCreatePost">Créer un post</button>
