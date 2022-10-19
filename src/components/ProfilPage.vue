@@ -13,16 +13,17 @@ export default {
   methods: {
     modifierProfil() {
       this.showModifierProfil = !this.showModifierProfil;
+      this.showProfilUpdated;
     },
     async updateProfile() {
       const options = {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer token"+ localStorage.getItem("token"),
+          Authorization: "bearer token" 
         },
         body: {
-          firstname: this.profile.firstname,
+          firstname: JSON.stringify.this.userList.lastname,
           lastname:this.userList.lastname,
           // email: String,
           // age: Number,
@@ -44,11 +45,12 @@ export default {
 
 <template>
   <div id="card-post">
-    <form >
+    <form @submit.prevent="updateProfile">
       <input v-model="profileUpdated.firstname" type="firstname" />
       <input v-model="profileUpdated.lastname" type="lastname" />
  
-      <input @submit.prevent="modifierProfile" :profile="this.userList"  type="submit" id="inputModifier" value="Modifier"/>
+      <input  :profile="this.userList"  type="submit" id="inputModifier" value="Modifier"/>
+      
     </form>
   </div>
 </template>
