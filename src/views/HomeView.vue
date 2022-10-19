@@ -9,8 +9,8 @@ import BCarousel from "../components/BCarousel.vue";
 
 <template>
   <main>
-    
-    <BCarousel/>
+
+    <BCarousel />
   </main>
 
 </template>
