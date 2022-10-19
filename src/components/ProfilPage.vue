@@ -19,14 +19,14 @@ export default {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer token",
+          Authorization: "bearer token"+ localStorage.getItem("token"),
         },
         body: {
-          firstname: String,
-          lastname: String,
-          email: String,
-          age: Number,
-          occupation: String,
+          firstname: this.profile.firstname,
+          lastname:this.userList.lastname,
+          // email: String,
+          // age: Number,
+          // occupation: String,
         },
       };
 
@@ -44,11 +44,11 @@ export default {
 
 <template>
   <div id="card-post">
-    <form>
+    <form >
       <input v-model="profileUpdated.firstname" type="firstname" />
       <input v-model="profileUpdated.lastname" type="lastname" />
-
-      <input @submit="modifierProfil" type="submit" name="" id="inputModifier" value="Modifier" />
+ 
+      <input @submit.prevent="modifierProfile" :profile="this.userList"  type="submit" id="inputModifier" value="Modifier"/>
     </form>
   </div>
 </template>
