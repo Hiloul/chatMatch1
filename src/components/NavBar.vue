@@ -31,11 +31,15 @@ export default {
         <nav 
         >
           <RouterLink to="/"><video class="logo" src="@/assets/ChatMatchVideo.mp4" autoplay muted></video></RouterLink>
-          <RouterLink class="hover-a" to="/createAccount">Créer un compte</RouterLink>
-          <RouterLink v-if="isConnected" class="hover-a" to="/createAccount">Profil</RouterLink>
-          <RouterLink  class="hover-a" to="/login" >Se connecter</RouterLink>
-          <RouterLink v-if="isConnected" class="hover-a" to="/login" @click="logout" >Se déconnecter</RouterLink>
+            <RouterLink v-if="isConnected" class="hover-a" to="/ProfilPage.vu">Profil</RouterLink>  
+          <RouterLink  class="hover-a"  to="/createAccount">Créer un compte</RouterLink> 
          
+  
+        <RouterLink v-if="isConnected" class="hover-a" to="/login" @click="logout" >Se déconnecter</RouterLink>
+       <RouterLink  v-else  class="hover-a" to="/login" >Se connecter</RouterLink>
+        
+          
+           
         </nav>
       </div>
       
