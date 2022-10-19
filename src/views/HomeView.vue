@@ -2,6 +2,7 @@
 <!-- App.vue nihel -->
 <script setup>
 import BCarousel from "../components/BCarousel.vue";
+import Post from "../components/Post.vue"
 
 
 </script>
@@ -12,7 +13,7 @@ import BCarousel from "../components/BCarousel.vue";
 
     <BCarousel />
   </main>
-
+  <Post v-if="showPost" :post="post" @reload-postlist="getPosts"/>
 </template>
 
 <script >
