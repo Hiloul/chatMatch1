@@ -3,15 +3,19 @@
 <script setup>
 import BCarousel from "../components/BCarousel.vue";
 import Post from "../components/Post.vue"
-
-
 </script>
 
+<script>
+export default{
+components:{Post},
+}
+</script>
 
 <template>
   <main>
 
     <BCarousel />
+  
   </main>
   <Post v-if="showPost" :post="post" @reload-postlist="getPosts"/>
 

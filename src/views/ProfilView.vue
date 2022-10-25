@@ -14,8 +14,8 @@ export default {
 
       result: true,
       token: "",
-
       profile: {},
+
       showCreatePost: false,
       showModifierProfil: false,
     };
@@ -48,7 +48,6 @@ export default {
       this.profile = responseBody;
       console.log("responseBody", responseBody);
       this.userList = responseBody;
-
     },
   },
   components: { CreatePost, ProfilPage },
@@ -58,10 +57,12 @@ export default {
 <template>
   <div class="card">
     <p class="photoProfil">
-      <img src="src\assets\Chat_Match_1avatard.png" alt="">
+      <img src="src\assets\Chat_Match_1avatard.png" alt="" />
     </p>
-    <button @click="modifierProfil" id="inputModifierProfil"><i class="fa-solid fa-sun"></i></button>
-    <ProfilPage :profile="userList" v-if="showModifierProfil"/>
+    <button @click="modifierProfil" id="inputModifierProfil">
+      <i class="fa-solid fa-sun"></i>
+    </button>
+    <ProfilPage :profile="userList" v-if="showModifierProfil" />
     <p>@{{ userList.firstname }}</p>
     <p>{{ userList.lastname }}</p>
 
@@ -74,13 +75,11 @@ export default {
 
 <style scoped>
 #inputModifierProfil {
-
   padding: 2px;
   background-color: #fe8c0e;
   color: white;
   border: 0px;
   border-radius: 5px;
-
 }
 
 #inputModifierProfil:hover {
@@ -88,7 +87,6 @@ export default {
   background-color: #f9ddbe;
   color: #fe8c0e;
   transition: all 0.2s;
-
 }
 
 #inputCreatePost {
