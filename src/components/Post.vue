@@ -12,6 +12,32 @@ export default {
 
   methods: {
 
+    addLike: async function (postId) {
+    // if (post.likes) {
+    //   post.likes++;
+    // } else {
+    //   post.likes = 1;
+    // }
+    const token = localStorage.getItem("token");
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "bearer " + token,
+      },
+      body: JSON.stringify({
+        postId: postId,
+      }),
+    };
+    const response = await fetch(
+      "https://social-network-api.osc-fr1.scalingo.io/chat-match/post/like",
+      options
+    );
+    const data = await response.json();
+      console.log(data);
+      console.log("testlike");
+  },
+
     async createComment(postId) {
       const token = localStorage.getItem("token");
       const options = {
@@ -35,30 +61,7 @@ export default {
       this.$emit("reloadPostlist");
     },
   },
-  async addLike(postId) {
-    if (post.likes) {
-      post.likes++;
-    } else {
-      post.likes = 1;
-    }
-    const token = localStorage.getItem("token");
-    const options = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "bearer " + token,
-      },
-      body: JSON.stringify({
-        postId: postId,
-      }),
-    };
-    const response = await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/chat-match/post/like",
-      options
-    );
-    const data = await response.json();
-      console.log(data);
-  },
+   
   emits: ["reloadPostlist"],
 };
 </script>
@@ -68,12 +71,12 @@ export default {
     <img src="@/assets/Chat_Match_1avatard.png" class="photoProfil" alt="">
     <h2>@{{ post.firstname }}</h2>
     <p>{{ post.content }}</p>
-    <button v-on:click.prevent="(e) => addLike(post._id)">
+    <button v-on:click="addLike(post._id)">
       <i class="fa-regular fa-heart"></i>
-    </button>
+    </button> 
     <span
-      >{{ post.likes ? post.likes : "0" }} like{{
-        post.likes && post.likes > 1 ? "s" : ""
+      >{{ post.likes.length ? post.likes.length : "0" }} like {{
+        post.likes.length && post.likes.length > 1 ? "s" : ""
       }}</span
     >
     <div id="comments">
