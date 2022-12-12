@@ -6,10 +6,7 @@ export default {
       profileUpdated: this.$props.profile,
     };
   },
-  mounted: function () {
-    this.modifierProfil();
 
-  },
   methods: {
     modifierProfil() {
       this.showModifierProfil = !this.showModifierProfil;
@@ -20,11 +17,11 @@ export default {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          Authorization: "bearer token" 
+          Authorization: "bearer" 
         },
         body: {
-          firstname: JSON.stringify.this.userList.lastname,
-          lastname:this.userList.lastname,
+          firstname: JSON.stringify.this.profileUpdated,
+          
           // email: String,
           // age: Number,
           // occupation: String,
@@ -45,11 +42,11 @@ export default {
 
 <template>
   <div id="card-post">
-    <form @submit.prevent="updateProfile">
+    <form @submit.prevent="profileUpdated">
       <input v-model="profileUpdated.firstname" type="firstname" />
       <input v-model="profileUpdated.lastname" type="lastname" />
  
-      <input  :profile="this.userList"  type="submit" id="inputModifier" value="Modifier"/>
+      <input  :class="profileUpdated" type="submit" id="inputModifier" value="Modifier"/>
       
     </form>
   </div>
