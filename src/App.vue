@@ -3,17 +3,8 @@ import { RouterLink, RouterView } from "vue-router";
 import NavBar from "./components/NavBar.vue";
 </script>
 
-
-
-<script>
-
-
-</script>
-
-
 <template>
   <header>
-    
    <NavBar/>
   </header>
   <RouterView />
